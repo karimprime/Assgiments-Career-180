@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Text Styling</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Dynamic Text Styling</h1>
+        <p id="dynamicText" class="dynamic-text">
+            Here is a paragraph of text that has various alignment characteristics that can be changed dynamically. 
+            Click the radio buttons below to view combinations of text style settings.
+        </p>
+
+        <form id="styleForm" class="style-form">
+            <div class="style-group">
+                <h3>Font Family</h3>
+                <label><input type="radio" name="fontFamily" value="Arial" checked> Arial</label>
+                <label><input type="radio" name="fontFamily" value="Courier"> Courier</label>
+                <label><input type="radio" name="fontFamily" value="Georgia"> Georgia</label>
+                <label><input type="radio" name="fontFamily" value="Verdana"> Verdana</label>
+            </div>
+
+            <div class="style-group">
+                <h3>Text Align</h3>
+                <label><input type="radio" name="textAlign" value="left"> Left</label>
+                <label><input type="radio" name="textAlign" value="center"> Center</label>
+                <label><input type="radio" name="textAlign" value="right"> Right</label>
+                <label><input type="radio" name="textAlign" value="justify" checked> Justify</label>
+            </div>
+
+            <div class="style-group">
+                <h3>Line Height</h3>
+                <label><input type="radio" name="lineHeight" value="normal" checked> Normal</label>
+                <label><input type="radio" name="lineHeight" value="1.5"> 1.5</label>
+                <label><input type="radio" name="lineHeight" value="2"> 2</label>
+            </div>
+
+            <div class="style-group">
+                <h3>Letter Spacing</h3>
+                <label><input type="radio" name="letterSpacing" value="0px" checked> 0px</label>
+                <label><input type="radio" name="letterSpacing" value="2px"> 2px</label>
+                <label><input type="radio" name="letterSpacing" value="3px"> 3px</label>
+            </div>
+
+            <div class="style-group">
+                <h3>Text Transform</h3>
+                <label><input type="radio" name="textTransform" value="none" checked> None</label>
+                <label><input type="radio" name="textTransform" value="uppercase"> Uppercase</label>
+                <label><input type="radio" name="textTransform" value="lowercase"> Lowercase</label>
+            </div>
+
+            <div class="style-group">
+                <h3>Text Decoration</h3>
+                <label><input type="radio" name="textDecoration" value="none" checked> None</label>
+                <label><input type="radio" name="textDecoration" value="underline"> Underline</label>
+                <label><input type="radio" name="textDecoration" value="overline"> Overline</label>
+                <label><input type="radio" name="textDecoration" value="line-through"> Line-through</label>
+            </div>
+
+            <div class="style-group">
+                <h3>Border Style</h3>
+                <label><input type="radio" name="textBorder" value="none" checked> None</label>
+                <label><input type="radio" name="textBorder" value="solid"> Solid</label>
+                <label><input type="radio" name="textBorder" value="dashed"> Dashed</label>
+            </div>
+
+            <div class="style-group">
+                <h3>Border Color</h3>
+                <label><input type="radio" name="borderColor" value="black" checked> Black</label>
+                <label><input type="radio" name="borderColor" value="blue"> Blue</label>
+                <label><input type="radio" name="borderColor" value="red"> Red</label>
+            </div>
+        </form>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>

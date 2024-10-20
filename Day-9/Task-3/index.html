@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Validation</title>
+</head>
+
+<body>
+    <script>
+
+        function getDayName(dateString) {
+            const dateParts = dateString.split('-');
+            const day = parseInt(dateParts[0], 10);
+            const month = parseInt(dateParts[1], 10) - 1;
+            const year = parseInt(dateParts[2], 10);
+            const date = new Date(year, month, day);
+
+            const options = { weekday: 'long' };
+            return date.toLocaleDateString('en-US', options);
+        }
+
+        function validateAndProcessBirthDate(userInput) {
+
+            if (userInput.length !== 10 ||
+                userInput.charAt(2) !== '-' ||
+                userInput.charAt(5) !== '-') {
+                alert("Wrong Date Format");
+                throw new Error("Invalid format. Expected format: DD-MM-VYVY (e.g., 22-01-1999)");
+            }
+
+            const day = parseInt(userInput.substring(0, 2), 10);
+            const month = parseInt(userInput.substring(3, 5), 10) - 1;
+            const year = parseInt(userInput.substring(6, 10), 10);
+
+            const date = new Date(year, month, day);
+
+            if (date.getFullYear() !== year ||
+                date.getMonth() !== month ||
+                date.getDate() !== day) {
+                alert("Invalid Date. Please enter a valid date.");
+                throw new Error("Date is not valid");
+            }
+
+            alert(`You entered a valid date: ${date.toDateString()}`);
+            return date;
+        }
+
+        function handleUserDateInput() {
+            const userInput = prompt("Enter your birth date (DD-MM-VYVY), e.g., 22-01-1999:");
+
+            try {
+                const dateObject = validateAndProcessBirthDate(userInput);
+                const dayName = getDayName(userInput);
+                alert(`Day of the week for the entered date is: ${dayName}`);
+            } catch (error) {
+                alert(error.message);
+            }
+        }
+
+        handleUserDateInput();
+    </script>
+</body>
+
+</html>

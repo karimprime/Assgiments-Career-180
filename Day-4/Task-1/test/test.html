@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll to Show/Hide Image</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            height: 2000px; /* Height to allow scrolling */
+            background-color: #f4f4f4; /* Light background */
+        }
+
+        .navbar {
+            position: fixed; /* Fixed to the top */
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: #4e9eff; /* Navbar background */
+            padding: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 100; /* On top of other content */
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* Space between items */
+        }
+
+        .logo {
+            color: #fff; /* Logo text color */
+            font-size: 20px;
+            transition: opacity 0.5s; /* Smooth transition for opacity */
+            z-index: 101; /* On top of other content */
+        }
+
+        .photo-container {
+            position: fixed; /* Fixed position for the photo */
+            top: 10px; /* Adjusted to be slightly lower */
+            left: 50%;
+            transform: translateX(-50%); /* Center the photo */
+            transition: opacity 0.5s ease-in-out; /* Smooth transition for opacity */
+        }
+
+        .photo-container img {
+            width: 120px; /* Adjusted width */
+            border-radius: 50%; /* Circular image */
+            border: 4px solid #fff; /* White border */
+        }
+
+        /* Content below the navbar */
+        .content {
+            margin-top: 100px; /* Space to allow for the fixed navbar */
+            padding: 20px;
+            height: 1800px; /* Content height for scrolling */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="logo" id="logo">
+            <a>Karim Ashraf Mohamed</a>
+            <span>sdfjjdfshgjhdfgh</span>
+        </div>
+
+    </div>
+
+    <div class="logo">
+        <a href="#" id="logo">
+            Karim Ashraf Mohamed <br>
+            <span>Front End Designer | Developer</span>
+            <div class="photo-container" id="imk">
+                <img src="https://via.placeholder.com/120" alt="Karim">
+            </div>
+        </a>
+    </div>
+
+    <div class="content">
+        <h1>Scroll Down to Hide the Photo</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+        <p>More content to allow scrolling...</p>
+        <p>More content to allow scrolling...</p>
+        <p>More content to allow scrolling...</p>
+        <p>More content to allow scrolling...</p>
+        <p>More content to allow scrolling...</p>
+        <p>More content to allow scrolling...</p>
+        <p>More content to allow scrolling...</p>
+        <p>More content to allow scrolling...</p>
+    </div>
+
+    <script>
+        const photoContainer = document.getElementById('imk');
+        const logo = document.getElementById('logo');
+
+        let lastScrollTop = 0; // Keep track of the last scroll position
+
+        window.addEventListener('scroll', () => {
+            const currentScrollTop = window.scrollY; // Current scroll position
+
+            // Show/hide the photo and logo based on scroll direction
+            if (currentScrollTop > lastScrollTop) {
+                // Scrolling down
+                photoContainer.style.opacity = '0'; // Hide the photo
+                logo.style.opacity = '1'; // Show the logo
+            } else {
+                // Scrolling up
+                photoContainer.style.opacity = '1'; // Show the photo
+                logo.style.opacity = '0'; // Hide the logo
+            }
+
+            // Update the last scroll position
+            lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop; // For mobile or negative scrolling
+        });
+    </script>
+
+</body>
+</html>

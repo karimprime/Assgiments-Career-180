@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Images Gallery</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="gallery-container">
+        <h1>Showing Pictures</h1>
+        <div class="controls">
+            <button id="prevBtn"><i class="fa-solid fa-backward-step"></i></button>
+            <button id="startSlideshow"><i class="fa-solid fa-play"></i></button>
+            <button id="stopSlideshow"><i class="fa-solid fa-stop"></i></button>
+            <button id="nextBtn"><i class="fa-solid fa-backward-step fa-flip-horizontal"></i></button>
+        </div>
+        <div class="image-display">
+            <img id="currentImage" src="images/logo10.png" alt="Gallery Image">
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>

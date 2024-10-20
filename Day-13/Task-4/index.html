@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="form-container">
+        <h1>Registration Form</h1>
+        <form id="registrationForm">
+            <div class="form-control">
+                <label for="name">Name:</label>
+                <input type="text" id="name" required>
+            </div>
+            <div class="form-control">
+                <label for="email">Email:</label>
+                <input type="email" id="email" required>
+            </div>
+            <div class="form-control">
+                <label for="jobTitle">Job Title:</label>
+                <input type="text" id="jobTitle" required>
+            </div>
+            <div class="form-control">
+                <label for="mobile">Mobile:</label>
+                <input type="text" id="mobile" required>
+            </div>
+            <div class="form-control">
+                <label for="address">Address:</label>
+                <input type="text" id="address" required>
+            </div>
+            <div class="form-control">
+                <label>Gender:</label>
+                <div class="gender">
+                    <input type="radio" name="gender" value="Male" required> Male
+                    <input type="radio" name="gender" value="Female"> Female
+                </div>
+            </div>
+            <button type="submit">Submit</button>
+            <button type="button" class="reset-btn" onclick="resetForm()">Reset</button>
+        </form>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
